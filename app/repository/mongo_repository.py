@@ -14,4 +14,4 @@ def insert_new_terror(terror_news: dict):
         },
         "summary": terror_news["body"]
     }
-    events_collection.insert_one()
+    events_collection.insert_one(doc)
