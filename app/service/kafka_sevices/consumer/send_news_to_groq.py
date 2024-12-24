@@ -19,7 +19,7 @@ def send_news_to_groq_consumer():
     )
     print("'send news to groq consumer' started")
     for message in consumer:
-        print(f"Consumer received message : {message.value['title']}")
+        print(f"Consumer received message : ")
         handle_news(message.value)
 
 

@@ -1,8 +1,9 @@
 import json
 import os
 
+from dotenv import load_dotenv
 from kafka import KafkaConsumer
-
+load_dotenv(verbose=True)
 
 def upload_news_to_db_consume():
     consumer = KafkaConsumer(
@@ -14,3 +15,7 @@ def upload_news_to_db_consume():
     print("'UPLOAD_NEWS_TO_DB consumer' is started")
     for message in consumer:
         print(f"Consumer received message : {message.value['title']}")
+
+
+if __name__ == "__main__":
+    upload_news_to_db_consume()
